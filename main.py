@@ -43,6 +43,11 @@ def main():
             drawn.draw(screen)
         for shot in shots:
             shot.draw(screen)
+        for rock in asteroids:
+            for shot in shots:
+                if rock.collision(shot):
+                    rock.kill()
+                    shot.kill()
         pygame.display.flip()
 if __name__ == "__main__":
     main()
