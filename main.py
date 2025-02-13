@@ -46,7 +46,7 @@ def main():
         for rock in asteroids:
             for shot in shots:
                 if rock.collision(shot):
-                    rock.kill()
+                    rock.split()
                     shot.kill()
         pygame.display.flip()
 if __name__ == "__main__":
